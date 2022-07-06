@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <input type="text" id="name" autocomplete="false" />
+      <input type="submit" />
+    </form>
+
+    <script src="./jquery.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#myForm").submit(function (e) {
+          e.preventDefault();
+          var name = $("#name").val();
+
+
+          $.ajax({
+            url:'https://jsonplaceholder.typicode.com/users',
+            method:"POST",
+            data:{},
+            success:function(res){
+                console.log(res)
+            }
+          })
+
+
+
+
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
+<!-- 
+
+    METHOD ->
+        GET -> recieving
+        POST -> sending
+        PUT/PATCH -> updation
+        DELETE
+
+
+ -->
